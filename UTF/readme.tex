@@ -1,0 +1,451 @@
+%% v1.0 [2022/02/03]
+\documentclass{brccms-hu}
+%\documentclass[english]{brccms-hu}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage[defaultsups]{newtxtext}
+\usepackage[varg]{newtxmath}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+
+\def\ClassFile{\texttt{brccms-hu.cls}}
+
+\begin{document}
+%\Vol{37}
+\jtitle{「法政大学情報メディア教育研究センター研究報告」のための\\
+\LaTeXe\ クラスファイル（\ClassFile{}）の使い方}
+%\jsubtitle{}
+\etitle{How to use \ClassFile\ for the Bulletin of Research Center for Computing and Multimedia Studies (RCCMS) of Hosei University}
+%\esubtitle{}
+\makeatletter
+\if@english
+\makeatother
+\authorlist{%
+ \authorentry{First A. Author}{hu}
+ \authorentry{Second B. Author}{hue}
+}
+\affiliate[hu]{Department of ..., University of Hosei University, 
+ \Email{000000.ac.jp}}
+\affiliate[hue]{Research Center for Computing and Multimedia Studies, 
+ Hosei University, \Email{000001.ac.jp}}
+\else
+\authorlist{%
+ \authorentry{第一 著者}{First A. Author}{hu}
+ \authorentry{第二 著者}{Second B. Author}{hue}
+}
+\affiliate[hu]{法政大学○○学部△△学科，\Email{e-mailアドレス}}
+\affiliate[hue]{法政大学情報メディア教育研究センター，\Email{e-mailアドレス}}
+\fi
+%\Jbreakauthorline{4}
+%\breakauthorline{4}
+%\received{2021}{10}{18}
+%\published{2022}{1}{1}
+
+\begin{abstract}
+The Research Center for Computing and Multimedia Studies (RCCMS) 
+of Hosei University 
+provides a (u)p\LaTeXe\ class file, named \ClassFile, 
+for the the Bulletin of RCCMS of Hosei University. 
+This document describes how to use the class file. 
+\end{abstract}
+\begin{keyword}
+class file, p\LaTeXe, up\LaTeXe
+\end{keyword}
+\maketitle
+
+\section{はじめに}
+
+このドキュメントは，
+「法政大学情報メディア教育研究センター研究報告」
+（以下，「研究センター研究報告」と略します）への投稿原稿を，
+日本語 (u)p\LaTeXe\ を用いて作成する際に
+利用するクラスファイル（\ClassFile{}）の使い方を説明したものです．
+投稿原稿の執筆にあたっては，『投稿要領』
+（https://www.hosei.ac.jp/application/files\slash 8216\slash 0704\slash 
+4072\slash bulletin\_howtosubmit.pdf）を参照してください．
+
+本ドキュメントは \LaTeXe\ の基本的な使い方を説明したものではありません．
+\LaTeXe\ の使い方に関しては，参考文献の解説書，または
+\TeX\ Wiki（https://texwiki.texjp.org/）を参照することを勧めます．
+
+\section{テンプレートならびに記述方法}%\label{template}
+
+\texttt{template-j.tex}（本ドキュメントとともに配布）に沿って
+記述すれば，「研究センター研究報告」の体裁を満たします．
+
+\makeatletter
+\if@english
+\makeatother
+\else
+\newpage
+\fi
+
+\subsection{プリアンブルの記述}
+
+\begin{verbatim}
+\documentclass{brccms-hu}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage[defaultsups]{newtxtext}
+\usepackage[varg]{newtxmath}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+\end{verbatim}
+
+\begin{itemize}
+\item
+今日では \texttt{amsmath} パッケージの利用が一般的です．
+\item 
+\texttt{amsthm} パッケージを使用するときは，
+\texttt{newtxtext} パッケージよりも前に読み込む必要があります
+（後ろで読み込むと，そのままではエラーが生じます）．
+\item 
+「研究センター研究報告」では欧文フォントに
+\texttt{newtxtext}（タイムス系）を使用します．
+\item
+\verb/graphicx/ のオプション \texttt{dvipdfmx} は，
+ドライバとして \texttt{dvipdfmx} を使うときに指定します．
+\texttt{dvips} などの他のドライバを使うときは適宜変更してください．
+\item
+\texttt{xcolor} もしくは \texttt{color} パッケージは必須ではありません．
+\item 
+\texttt{url} パッケージは著者のメールアドレスの記述のために読み込みます．
+\end{itemize}
+
+\subsection{本文の記述}
+
+最初に和文論文について説明します．
+英文論文は\ref{sec:english}項（\pageref{sec:english}頁）で説明します．
+
+\begin{verbatim}
+\begin{document}
+%\Vol{37}
+\jtitle{}
+%\jsubtitle{}
+\etitle{}
+%\esubtitle{}
+\authorlist{%
+ \authorentry{姓 名}{Mei Sei}{hu}
+ \authorentry{姓 名}{Mei Sei}{hue}
+}
+\affiliate[ラベル]{所属，\Email{メールアドレス}}
+%\Jbreakauthorline{4}
+%\breakauthorline{4}
+%\received{2021}{10}{18}
+%\published{2022}{1}{1}
+
+\begin{abstract}
+\end{abstract}
+\begin{keyword}
+\end{keyword}
+\maketitle
+\section{}
+...
+\Acknowledgement % 謝辞
+
+\begin{thebibliography}{9}% 文献が10以上のとき99，10未満のとき9など
+\bibitem{}
+\end{thebibliography}
+
+%\appendix
+\end{document}
+\end{verbatim}
+
+\begin{itemize}
+\item 
+\verb/\Vol/ は
+巻数をアラビア数字で指定します．
+未定のときは，引数を空にするかコメントアウトしてください．
+
+\item 
+\verb/\jtitle/ には和文タイトルを記述します．
+任意の場所で改行したいときは，
+\verb/\\/ か \verb/\break/ を使ってください．
+必要に応じて，副題を \verb/\jsubtitle/ コマンドに記述できます．
+\item 
+\verb/\etitle/ には英文タイトルを記述します．
+任意の場所で改行したいときは，\verb/\\/  か \verb/\break/ を使ってください．
+必要に応じて，副題を \verb/\esubtitle/ コマンドに記述できます．
+\item 
+著者名は，以下のように記述します．
+\begin{verbatim}
+\authorlist{%
+ \authorentry{姓 名}{Mei Sei}{ラベル}
+}
+\end{verbatim}
+例えば
+\begin{verbatim}
+\authorlist{%
+ \authorentry{第一 著者}
+  {First A. Author}{hu}
+}
+\end{verbatim}
+などと記述します．
+
+\begin{itemize}
+\item 
+著者のリストを \verb/\authorentry/ に記述し，
+リスト全体を \verb/\authorlist/ の引数にします．
+\verb/\authorentry/ は何人でも記述できます．
+\item
+第1引数の和文著者名の
+姓と名の間には{\bfseries 必ず ``半角'' のスペース}を挿入します
+（スペースを挿入し忘れた場合にはワーニングが出力されます）．
+\item
+第2引数には，著者名のローマ字読みを記述します．
+『原稿書式』では「ファーストネーム，ミドルイニシャル，苗字を記載」と
+指定されています．
+\item
+第3引数には，所属のラベルを記述します
+（後述の \verb/\affiliate/ の第1引数に対応します）．
+ラベルの前後にスペースを挿入しないでください．
+\verb*/{hu}/ と \verb*/{ hu}/ は異なる所属と判断します．
+なお，複数の所属がある場合は，
+カンマで区切ってラベルを複数記述することができます．
+\item 
+著者が多数の場合，任意の場所で改行を行いたいとき，
+和名およびローマ字名の場合にそれぞれ，
+\verb/\Jbreakauthorline/，
+\verb/\breakauthorline/ コマンドを使用します．
+
+例えば，
+\verb/\Jbreakauthorline{4}/ とすれば4人目の著者の後ろで改行できます．
+\verb/\breakauthorline{4}/ も同様です．
+カンマで区切って複数の数字を指定できます．
+\end{itemize}
+
+\item 
+著者の所属とメールアドレスは \verb/\affiliate/ に記述します．
+\begin{verbatim}
+\affiliate[ラベル]{所属，\Email{メールアドレス}}
+\end{verbatim}
+例えば，
+\begin{verbatim}
+\affiliate[hu]{法政大学○○学部△△学科，\Email{000000.ac.jp}}
+\end{verbatim}
+などと記述します．
+
+第1引数には \verb/\authorentry/ の第3引数で記述したラベルを
+（ラベルの前後にスペースを挿入しないでください），
+第2引数には所属・メールアドレスをそれぞれ記述します．
+メールアドレスは \verb/\Email/ に，
+アドレスをそのまま（例えば \verb/_/ を \verb/\_/ などとしない）
+記述してください．
+所属が長い場合は \verb/\Email/ の前で \verb/\\/ を使って
+改行することができます．
+
+このコマンドは \verb/\authorentry/ で記述したラベルの出現順に記述します．
+\item 
+\verb/\received/，\verb/\published/ は，
+投稿原稿の受付，発行の日付を最初のページの最下部に出力するためのコマンドです．
+3つの引数に前から順に，西暦年，月，日のアラビア数字を記述します．
+不明の場合は空にするか，コメントアウトしたままにします．
+\item
+\texttt{abstract} 環境には，英文要旨を記述します．
+『原稿書式』では「Abstractの長さは250字以内」と指定されています．
+\item
+\texttt{keyword} 環境には，英文キーワードを記述します．
+『原稿書式』では「キーワードは 6 個以内」と指定されています．
+\item 
+謝辞を記述する場合は，
+\verb/\Acknowledgement/ コマンドを使います．
+\end{itemize}
+
+\subsection{英文のテンプレート}
+\label{sec:english}
+
+英文用のテンプレートとして \texttt{template-e.tex} を利用してください．
+
+\begin{verbatim}
+\documentclass[english]{brccms-hu}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage[defaultsups]{newtxtext}
+\usepackage[varg]{newtxmath}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+
+\begin{document}
+%\Vol{37}
+\title{}
+%\subtitle{}
+\authorlist{%
+ \authorentry{First A. Author}{label}
+ \authorentry{First B. Author}{hu}
+}
+\affiliate[label]{affiliation,
+ \Email{e-mail address}}
+\affiliate[hu]{affiliation, 
+ \Email{e-mail address}}
+%\breakauthorline{4}
+%\received{2021}{10}{18}
+%\published{2022}{1}{1}
+
+\begin{abstract}
+\end{abstract}
+\begin{keyword}
+\end{keyword}
+\maketitle
+\end{verbatim}
+
+和文論文と異なる部分を説明します．
+
+\begin{itemize}
+\item 
+\verb/\documentclass/ のオプションに \texttt{english} を指定します．
+\item 
+\verb/\title/ に英文タイトルを記述します．
+任意の場所で改行したいときは，
+\verb/\\/ か \verb/\break/ を使ってください．
+必要に応じて，副題を \verb/\subtitle/ コマンドに記述できます．
+\item 
+著者名は，引数が2つになり，例えば以下のように記述します．
+\begin{verbatim}
+\authorlist{%
+ \authorentry{First A. Author}{hu}
+}
+\end{verbatim}
+\end{itemize}
+
+\subsection{数式について}
+%\label{sec:refs}
+
+別行数式はセンタリングされます．
+\begin{align}
+ f(x)=\sin x
+\end{align}
+数式番号は右端に出力されます．
+
+%\makeatletter
+%\if@english
+%\makeatother
+%\else
+%\newpage
+%\fi
+
+\subsection{図表について}
+
+和文キャプションに加えて英文キャプションが必要です．
+英文キャプションは \verb/\ecaption/ に指定します．
+\begin{verbatim}
+\begin{figure}[htb]
+\centering
+% graphic etc.
+\caption{}
+\ecaption{}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[htb]
+\centering
+\textcolor{black!20}{\rule{50mm}{30mm}}
+\caption{和文キャプション}
+\ecaption{Caption in English}
+\end{figure}
+
+表のキャプションは以下のように表組みの上に記述します．
+\begin{verbatim}
+\begin{table}[htb]
+\caption{}
+\ecaption{}
+\centering
+\begin{tabular}{ll}
+\hline
+.... \\
+\hline
+\end{tabular}
+\end{table}
+\end{verbatim}
+
+%\subsection{参考文献について}
+%\label{sec:refs}
+
+\subsection{脚注について}
+\label{sec:footnote}
+
+脚注%
+\footnote{脚注はこのような形で最下段に置かれます．}
+は，\LaTeXe\ の標準の形です．
+
+\setbox0\hbox{\verb/\flushbottom/}
+\subsection{\box0 について}
+
+\LaTeX\ では二段組のときには \verb/\flushbottom/，
+つまり，左右の段の下を揃えるという仕様になっています．
+このため，図表や数式などの上下に比較的大きな空きが
+生じることがあります．このような場合は，
+改段を促すために，適宜 \verb/\newpage/ を使う必要があります．
+
+\subsection{hyperrefについて}
+\label{sec:hyperref}
+
+hyperrefを使用するときは，PXjahyperパッケージを併用することを勧めます．
+\begin{verbatim}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\end{verbatim}
+
+このパッケージが使えないときは，
+\texttt{hyperref}オプションに\texttt{setpagesize=false}を
+指定することを勧めます．
+\begin{verbatim}
+\usepackage[dvipdfmx,setpagesize=false]
+ {hyperref}
+\end{verbatim}
+
+他のパッケージとの併用で生じる不具合などについては，
+以下のURLを参照するなどしてください．\par
+\begin{small}
+\begin{verbatim}
+https://texwiki.texjp.org/?hyperref#v71488f4
+\end{verbatim}
+\end{small}
+
+\section{クラスファイルから削除したコマンド}
+%\label{sec:app}
+
+このクラスファイルは「研究センター研究報告」に特化したものです．
+目次や索引など使うことのないコマンドは削除しています．
+
+%\Acknowledgement % 謝辞
+
+\begin{thebibliography}{9}% 文献が10以上のとき99，10未満のとき9
+\bibitem{Okumura}
+奥村晴彦，黒木裕介，
+［改訂第8版］\LaTeXe{} 美文書作成入門，
+技術評論社，2020．
+
+\bibitem{}
+D.E.クヌース，\TeX{} ブック，アスキー出版局，1989．
+
+\bibitem{latex}
+レスリー・ランポート，
+文書処理システム\LaTeXe{}，アスキー出版局，1999．
+
+\bibitem{FMi1}
+マイケル・グーセンス，フランク・ミッテルバッハ，アレキサンダー・サマリン，
+The \LaTeX{} コンパニオン，アスキー出版局，1998．
+
+\bibitem{FMi2}
+マイケル・グーセンス，セバスチャン・ラッツ，フランク・ミッテルバッハ，
+\LaTeX{} グラフィックスコンパニオン，アスキー出版局，2000．
+
+\bibitem{PEn}
+ページ・エンタープライゼス，
+\LaTeXe\ マクロ \& クラスプログラミング基礎解説，
+技術評論社，2002．
+
+\bibitem{Yoshinaga}
+吉永徹美，
+\LaTeXe\ マクロ \& クラスプログラミング実践解説，
+技術評論社，2003．
+\end{thebibliography}
+
+%\appendix
+
+\end{document}

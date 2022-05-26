@@ -1,0 +1,40 @@
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+ 法政大学情報メディア教育研究センター研究報告 (u)pLaTeX2e クラスファイル
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+1. brccms-hu.cls の現在のバージョンは
+      [2022/02/03 v1.0]]
+   です。
+
+2. 以下のファイルがあります。
+     brccms-hu.cls     クラスファイル
+     readme.tex        クラスファイルの使い方
+     readme.pdf        クラスファイルの使い方 (pdf)
+     template-j.tex    和文テンプレート
+     template-e.tex    英文テンプレート
+   コンパイルに必要なファイルは，brccms-hu.cls だけです。
+   readme.pdf（readme.tex）がこのクラスファイルを使用した場合のサンプルです。
+   論文作成の雛形として template-(je).tex を利用できます。
+   適切な漢字コードを選べば，
+   platex（EUC，SJIS），uplatex（UTF），LuaTeX（UTF）で動作します。
+
+3. 本クラスファイルは，以下の環境でテストし，動作確認しました。
+   e-pTeX, Version 3.1415926-p3.3-110825-2.5 (euc)
+    (TeX Live 2013/dev)
+   e-upTeX, Version 3.14159265-p3.6-u1.20-141210-2.6 (utf8.uptex)
+    (TeX Live 2015)
+   e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex)
+    (TeX Live 2018)
+   e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex)
+    (TeX Live 2020)
+   LuaTeX, Version 1.07.0 (TeX Live 2018)
+   LuaHBTeX, Version 1.12.0 (TeX Live 2020)
+     LuaTeXについて：
+     パッケージなどを追加で読み込むことなく，LuaTeX でも動作します。
+     readme.tex または template-(je).tex のまま（UTF）で動作確認しました。
+     しかし，LuaTeX は今後も仕様が変更になることが予想されます。
+     upLaTeX か pLaTeX での使用をお勧めします。
+
+4. 本クラスファイルに関わる質問はメールでお願いいたします。
+   TeX や LaTeX の一般的な質問にはお答えいたしかねます。
+   TeX Wiki か書籍などを参照してください。
