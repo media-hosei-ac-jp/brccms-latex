@@ -3,18 +3,17 @@
 /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
 1. brccms-hu.cls の現在のバージョンは
-      [2022/02/03 v1.0]]
+      [2022/01/21 v1.0]
    です。
 
 2. 以下のファイルがあります。
      brccms-hu.cls     クラスファイル
      readme.tex        クラスファイルの使い方
      readme.pdf        クラスファイルの使い方 (pdf)
-     template-j.tex    和文テンプレート
-     template-e.tex    英文テンプレート
+     template.tex      テンプレート
    コンパイルに必要なファイルは，brccms-hu.cls だけです。
    readme.pdf（readme.tex）がこのクラスファイルを使用した場合のサンプルです。
-   論文作成の雛形として template-(je).tex を利用できます。
+   論文作成の雛形として template.tex を利用できます。
    適切な漢字コードを選べば，
    platex（EUC，SJIS），uplatex（UTF），LuaTeX（UTF）で動作します。
 
@@ -31,10 +30,16 @@
    LuaHBTeX, Version 1.12.0 (TeX Live 2020)
      LuaTeXについて：
      パッケージなどを追加で読み込むことなく，LuaTeX でも動作します。
-     readme.tex または template-(je).tex のまま（UTF）で動作確認しました。
+     readme.tex または template.tex のまま（UTF）で動作確認しました。
      しかし，LuaTeX は今後も仕様が変更になることが予想されます。
      upLaTeX か pLaTeX での使用をお勧めします。
 
 4. 本クラスファイルに関わる質問はメールでお願いいたします。
    TeX や LaTeX の一般的な質問にはお答えいたしかねます。
    TeX Wiki か書籍などを参照してください。
+
+                                                          2022年 1月21日
+                                                     (株)ウルス 佐藤基昭
+                         E-mail: teppei@uls.co.jp, http://www.uls.co.jp/
+                                    〒113-0022 東京都文京区千駄木3-21-15
+                                   TEL: 03-5842-1290 / FAX: 03-5842-1295

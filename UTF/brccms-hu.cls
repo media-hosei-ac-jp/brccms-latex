@@ -10,7 +10,7 @@
  \NeedsTeXFormat{LaTeX2e}
 \fi
 \ProvidesClass{brccms-hu}
-  [2022/02/03 v1.0 法政大学情報メディア教育研究センター研究報告]
+  [2022/05/26 v1.1 法政大学情報メディア教育研究センター研究報告]
 
 \def\rccms@warning{\ClassWarningNoLine{brccms-hu}}
 \def\rccmsline@warning{\ClassWarning{brccms-hu}}
@@ -1284,7 +1284,7 @@
 \if@english
  \let\ecaption\@gobble
 \else
-\def\fnum@Efigure{Fig.\,\thefigure}
+\def\fnum@Efigure{Fig.\thefigure}
 \def\fnum@Etable{Table~\thetable}
 \long\def\ecaption#1{\par
  \begingroup
@@ -1474,7 +1474,7 @@
 %\newcommand{\indexname}{索 引}
 %\newcommand{\abstractname}{概要}
 \if@english
- \newcommand{\figurename}{Fig.\,}
+ \newcommand{\figurename}{Fig.}
  \newcommand{\tablename}{Table}
  \newcommand{\refname}{REFERENCES}
  \newcommand{\appendixname}{APPENDIX}
