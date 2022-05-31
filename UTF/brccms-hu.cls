@@ -10,7 +10,8 @@
  \NeedsTeXFormat{LaTeX2e}
 \fi
 \ProvidesClass{brccms-hu}
-  [2022/05/26 v1.1 法政大学情報メディア教育研究センター研究報告]
+%%[2022/02/03 v1.0 法政大学情報メディア教育研究センター研究報告]
+  [2022/05/27 v1.1 法政大学情報メディア教育研究センター研究報告]
 
 \def\rccms@warning{\ClassWarningNoLine{brccms-hu}}
 \def\rccmsline@warning{\ClassWarning{brccms-hu}}
@@ -689,7 +690,7 @@
  %\advance \chk@alcnt \@ne
  \@ifundefined{al@#1}%
   {\expandafter\xdef\csname al@#1\endcsname{\the\@alcnt}}{%
-   \rccms@warning{Check the "#1" label, it is already asigned}%
+   \rccms@warning{Check the "#1" label, it is already assigned}%
   }%
  \protected@xdef\@affiliate{\@affiliate
   \protect\save@affi{%
