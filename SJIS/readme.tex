@@ -70,7 +70,7 @@ class file, p\LaTeXe, up\LaTeXe
 
 \section{テンプレートならびに記述方法}%\label{template}
 
-\texttt{template-j.tex}（本ドキュメントとともに配布）に沿って
+\texttt{bulletin_template_J.tex}または\texttt{bulletin_template_E.tex}（本ドキュメントとともに配布）に沿って
 記述すれば，「研究センター研究報告」の体裁を満たします．
 
 \makeatletter
@@ -92,6 +92,8 @@ class file, p\LaTeXe, up\LaTeXe
 %\usepackage[dvips]{graphicx}
 \usepackage{xcolor}
 \usepackage{url}
+\usepackage{cite}
+\renewcommand*{\citedash}{$-$\penalty\citepunctpenalty}
 \end{verbatim}
 
 \begin{itemize}
@@ -112,6 +114,8 @@ class file, p\LaTeXe, up\LaTeXe
 \texttt{xcolor} もしくは \texttt{color} パッケージは必須ではありません．
 \item 
 \texttt{url} パッケージは著者のメールアドレスの記述のために読み込みます．
+\item 
+\texttt{cite} パッケージは参考文献のリファーの形式をカスタマイズするたために読み込みます．\texttt{cite} パッケージを読み込んだ次の行のマクロも記述してください．
 \end{itemize}
 
 \subsection{本文の記述}

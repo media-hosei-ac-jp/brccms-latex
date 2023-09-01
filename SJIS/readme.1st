@@ -10,7 +10,8 @@
      brccms-hu.cls     クラスファイル
      readme.tex        クラスファイルの使い方
      readme.pdf        クラスファイルの使い方 (pdf)
-     template.tex      テンプレート
+     template-j.tex/template-e.tex      最低限のテンプレート
+     bulletin_template_J.tex/bulletin_template_e.tex      研究報告テンプレート
    コンパイルに必要なファイルは，brccms-hu.cls だけです。
    readme.pdf（readme.tex）がこのクラスファイルを使用した場合のサンプルです。
    論文作成の雛形として template.tex を利用できます。
